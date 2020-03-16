@@ -6,7 +6,7 @@
 
   <!-- User Information -->
   <user value=""/> <!-- Enter your user name here -->
-  <team value=""/>         <!-- Your team number -->
+  <team value="241071"/>         <!-- Your team number -->
   <passkey value=""/>       <!-- 32 hexadecimal characters if provided -->
 
   <power value="full"/>     <!-- Throttling this at K8s level -->

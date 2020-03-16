@@ -11,12 +11,12 @@ kind: Deployment
 metadata:
   name: fah
   labels:
-    app: fah  
+    app: fah
 spec:
   selector:
     matchLabels:
       app: fah
-  replicas: 2 # Set number of replicas to run - one replica per node
+  replicas: 4 # Set number of replicas to run - one replica per node
   template:
     metadata:
       labels:
@@ -38,15 +38,15 @@ spec:
         imagePullPolicy: Always
         resources:
           limits:
-            cpu: 1000m # How much CPU you wish to donate per node
-            memory: 2Gi
+            cpu: 4000m # How much CPU you wish to donate per node
+            memory: 8Gi
           requests:
             cpu: 100m
-            memory: 256Mi
+            memory: 512Mi
       #   volumeMounts: # Mount config.xml file
       #   - name: fah-config
       #     mountPath: /etc/fahclient/config.xml
-      #     subPath: config.xml            
+      #     subPath: config.xml
       # volumes:
       #   - name: fah-config
       #     configMap:
@@ -78,11 +78,11 @@ spec:
 #         No folding slot configuration is necessary.  The client will
 #         automaticlaly choose a good configuration for you.  However, here
 #         are some examples:
-      
+
 #           <slot id="0" type="CPU"/>
 
 #         or
-        
+
 #           <slot id="0" type="CPU"/>
 #           <slot id="1" type="GPU"/>
 
