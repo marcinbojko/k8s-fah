@@ -50,8 +50,8 @@ spec:
                 - worker
       containers:
       - name: fah
-        image: "marcinbojko/k8sfah:v0.0.3"
-        imagePullPolicy: Always
+        image: "marcinbojko/k8sfah:v0.0.4"
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             cpu: 10000m # How much CPU you wish to donate per node
