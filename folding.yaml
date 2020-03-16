@@ -34,12 +34,12 @@ spec:
             topologyKey: "kubernetes.io/hostname"
       containers:
       - name: fah
-        image: "richstokes20/fah-covid:latest"
+        image: "marcinbojko/k8sfah:v0.0.3"
         imagePullPolicy: Always
         resources:
           limits:
-            cpu: 4000m # How much CPU you wish to donate per node
-            memory: 8Gi
+            cpu: 10000m # How much CPU you wish to donate per node
+            memory: 6Gi
           requests:
             cpu: 100m
             memory: 512Mi
