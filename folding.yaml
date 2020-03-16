@@ -32,6 +32,22 @@ spec:
                 values:
                 - fah
             topologyKey: "kubernetes.io/hostname"
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - preference:
+              matchExpressions:
+              - key: role
+                operator: In
+                values:
+                - worker
+            weight: 1
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: role
+                operator: In
+                values:
+                - worker
       containers:
       - name: fah
         image: "marcinbojko/k8sfah:v0.0.3"
